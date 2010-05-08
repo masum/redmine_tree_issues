@@ -1,0 +1,15 @@
+<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<%= stylesheet_link_tag "style", :plugin => "redmine_tree_issues", :media => "screen" %>
+<%= javascript_include_tag "script.js", :plugin => "redmine_tree_issues" %>
+
+<table class="list issues">
+<thead><tr>
+ <th class="col0"><%= l(:field_issue) %></th>
+ <th class="col1"><%= l(:field_done_ratio) %></th>
+ <th class="col2"><%= l(:field_assigned_to) %></th>
+ <th class="col3"><%= l(:field_category) %></th>
+ <th class="col4"><%= l(:field_start_date) %></th>
+ <th class="col5"><%= l(:field_due_date) %></th>
+</tr></thead>
+<%= render :partial => 'issueslist' %>
+</table>

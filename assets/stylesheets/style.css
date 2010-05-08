@@ -1,0 +1,12 @@
+.treebox {margin-left:1em;}
+.treeid {font-size:0.9em;color:#aaa}
+.children {color:#ccc;font-size:0.8em;}
+.list td {line-height:1.5em;}
+.col5{width:30px;text-align:center;}
+.col4{width:30px;text-align:center;}
+.col3{width:50px;text-align:center;}
+.col2{width:50px;text-align:center;}
+.col1{width:50px;text-align:center;}
+.col0{width:500px;text-align:center;}
+.folder_open{display:none;}
+.done_ratio{background-color:#fa7;text-align:left;font-size:0.8em;}

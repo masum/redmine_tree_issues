@@ -1,0 +1,33 @@
+<% indent = params[:indent].nil? ? 1 : (params[:indent].to_i + 2) %>
+<% @arIssues.each do |item| %>
+  <% issue = item['issue'] %>
+  <% children = item['children'] %>
+  <tr id="<%= issue.id %>">
+    <td style="padding-left:<%= indent %>em;" class="ticketname">
+      <% if children==0 then %>
+        <%= image_tag "blank.gif", :plugin => "redmine_tree_issues" %>
+        <%= image_tag "icon.gif", :plugin => "redmine_tree_issues" %>
+      <% else %>
+        <a href="javascript:void(0)" onclick="getChildren(event)" class="<%= url_for :controller => 'treeissues', :action => 'children', :parent_id => issue.id %>">
+        <%= image_tag "allow1.gif", {:class => "folder_close", :plugin => "redmine_tree_issues"} %>
+        <%= image_tag "allow2.gif", {:class => "folder_open", :plugin => "redmine_tree_issues"} %>
+        <%= image_tag "folder.gif", :plugin => "redmine_tree_issues" %>
+      <% end %>
+        <%= issue.subject %>
+      <% unless children==0 then %>
+        </a>
+      <% end %>
+      <span class="treeid">[#<%= link_to issue.id, :controller => 'issues', :action => 'show', :id => issue %>]</span>
+      <% unless children==0 then %>
+        <span class="children">(<%= children %>)</span>
+      <% end %>
+    </td>
+    <td class="col1">
+      <div class="done_ratio" style="width:<%= issue.done_ratio %>%;"><%= issue.done_ratio %>%</div>
+    </td>
+    <td class="col2"><%= issue.assigned_to %></td>
+    <td class="col3"><%= issue.category %></td>
+    <td class="col4"><%= format_date(issue.start_date) %></td>
+    <td class="col5"><%= format_date(issue.due_date) %></td>
+  </tr>
+<% end %>
