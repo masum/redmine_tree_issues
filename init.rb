@@ -10,8 +10,8 @@ Redmine::Plugin.register :redmine_tree_issues do
        :tree_issues,
         {:controller => 'treeissues',
          :action => 'index'},
-       :caption => "ツリー",
-       :last => true,
+       :caption => "チケット(階層)",
+       :after => :issues,
        :param => :project_id
   permission :view_tree_issues, { :treeissues => [ :index ] }, :public => false
 end
