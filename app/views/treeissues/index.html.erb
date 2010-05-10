@@ -4,12 +4,13 @@
 
 <table class="list issues">
 <thead><tr>
- <th class="col0"><%= l(:field_issue) %></th>
- <th class="col1"><%= l(:field_done_ratio) %></th>
- <th class="col2"><%= l(:field_assigned_to) %></th>
- <th class="col3"><%= l(:field_category) %></th>
- <th class="col4"><%= l(:field_start_date) %></th>
- <th class="col5"><%= l(:field_due_date) %></th>
+ <th class="col col0"><%= l(:field_issue) %></th>
+ <th class="col col1"><%= l(:field_estimated_hours) %></th>
+ <th class="col col2"><%= l(:field_done_ratio) %></th>
+ <th class="col col3"><%= l(:field_assigned_to) %></th>
+ <th class="col col4"><%= l(:field_category) %></th>
+ <th class="col col5"><%= l(:field_start_date) %></th>
+ <th class="col col6"><%= l(:field_due_date) %></th>
 </tr></thead>
 <%= render :partial => 'issueslist' %>
 </table>

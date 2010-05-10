@@ -22,12 +22,13 @@
         <span class="children">(<%= children %>)</span>
       <% end %>
     </td>
-    <td class="col1">
+    <td class="col col1"><%= issue.estimated_hours %></td>
+    <td class="col col2">
       <div class="done_ratio" style="width:<%= issue.done_ratio %>%;"><%= issue.done_ratio %>%</div>
     </td>
-    <td class="col2"><%= issue.assigned_to %></td>
-    <td class="col3"><%= issue.category %></td>
-    <td class="col4"><%= format_date(issue.start_date) %></td>
-    <td class="col5"><%= format_date(issue.due_date) %></td>
+    <td class="col col3"><%= issue.assigned_to %></td>
+    <td class="col col4"><%= issue.category %></td>
+    <td class="col col5"><%= format_date(issue.start_date) %></td>
+    <td class="col col6"><%= format_date(issue.due_date) %></td>
   </tr>
 <% end %>

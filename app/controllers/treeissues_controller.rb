@@ -21,5 +21,6 @@ class TreeissuesController < ApplicationController
       item['issue'] = issue;
       @arIssues << item
     }
+    @arIssues.sort!{|a,b|b['children']<=>a['children']}
   end
 end
